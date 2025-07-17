@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "./components/layout/MainLayout";
-import Dashboard from "./pages/dashboard/dashboard";
+import Dashboard from "./pages/hris/dashboard/DashboardPage";
 
 function App() {
   return (
