@@ -1,7 +1,7 @@
 import { Bars3Icon } from "@heroicons/react/24/solid";
 
-const BarsIcon = ({ size = 4, color = "text-gray-500", hover }) => {
-  return <Bars3Icon className={`h-${size} w-${size} ${color} ${hover}`} />;
-};
+const BarsIcon = ({ size = 20, className, ...props }) => (
+  <Bars3Icon width={size} height={size} className={className} {...props} />
+);
 
 export default BarsIcon;
