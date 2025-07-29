@@ -1,6 +1,7 @@
 export const services = ["HRIS", "ATS"];
 
 export const features = [
+  { service: "LOGIN", feature: "login", path: "/" },
   { service: "HRIS", feature: "Dashboard", path: "/hris" },
   { service: "HRIS", feature: "Employees", path: "/hris-employees" },
   { service: "HRIS", feature: "Configurations", path: "/hris-configurations" },
@@ -14,7 +15,7 @@ export const users = [
     name: "Benz Atencion",
     email: "benz@example.com",
     role: "SUPERADMIN",
-    serviceAccess: ["HRIS", "ATS"],
+    serviceAccess: ["HRIS", "ATS","LOGIN"],
     featureAccess: features.map((f) => f.path), // Full access
   },
   {
@@ -25,7 +26,14 @@ export const users = [
     serviceAccess: ["HRIS"],
     featureAccess: ["/hris", "/hris-employees"], // Limited access
   },
+  {
+    id: "u3",
+    name: "Jim Doe",
+    email: "jim@example.com",
+    role: "USER",
+    serviceAccess: ["ATS"],
+    featureAccess: ["/ats"], // Limited access
+  },
 ];
 
-// simulate current logged-in user
-export const loggedInUser = users[1]; // Toggle between users[0] or users[1]
+export const loggedInUser = users[0]; 

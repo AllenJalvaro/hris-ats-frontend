@@ -1,8 +1,21 @@
-import React from 'react';
+import { Button } from "@/components/ui/button";
+import { useHeader } from "@/context/HeaderContext";
+import { useAuthStore } from "@/stores/useAuthStore";
+import React, { useEffect } from "react";
 
-const Dashboard = () => {
+const HrisDashboardPage = () => {
+  const { setHeaderConfig } = useHeader();
+
+  
+  useEffect(() => {
+    setHeaderConfig({
+      title: "HRIS Dashboard",
+      description: "Summary or analytcis heree",
+    });
+  }, []);
+
   return (
-    <div className='hidden '>
+    <div className="hidden ">
       <h2 className="text-2xl font-semibold mb-4">Analytics Overview</h2>
       <div className="flex gap-8 mt-4">
         <div className="bg-blue-100 p-4 rounded-lg min-w-[150px] text-center">
@@ -13,7 +26,7 @@ const Dashboard = () => {
           <h3 className="text-lg font-medium">Active Sessions</h3>
           <p className="text-xl font-bold">34</p>
         </div>
-         <div className="bg-green-100 p-4 rounded-lg min-w-[150px] text-center">
+        <div className="bg-green-100 p-4 rounded-lg min-w-[150px] text-center">
           <h3 className="text-lg font-medium">New Hires</h3>
           <p className="text-xl font-bold">5</p>
         </div>
@@ -22,4 +35,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default HrisDashboardPage;
